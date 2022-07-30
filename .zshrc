@@ -4,6 +4,7 @@
 # http://mollifier.mit-license.org/
 
 ########################################
+
 # 環境変数
 export LANG=ja_JP.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -23,14 +24,8 @@ setopt hist_reduce_blanks       # ヒストリに保存する際に不要な空�
 setopt hist_save_no_dups        # historyをヒストリに保存しない
 setopt extended_history
 
-# プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-# PROMPT="%{${fg[cyan]}%}[%n]%{${reset_color}%} %~
-# %# "
-
 ########################################
+
 # 補完
 # 補完機能を有効にする
 autoload -Uz compinit
@@ -54,6 +49,7 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 ########################################
+
 # オプション
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
@@ -109,6 +105,7 @@ alias ....='cd ../../..; ls -A'
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
+alias kc='kubectl'
 
 ########################################
 
@@ -117,8 +114,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.nodebrew/current/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -148,4 +143,9 @@ plugins=(git bundler brew emoji-clock)
 source $ZSH/oh-my-zsh.sh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source <(kubectl completion zsh)
+
+########################################
+
 eval "$(pyenv init -)"
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-17.0.2.jdk/Contents/Home'
