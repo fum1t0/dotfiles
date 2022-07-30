@@ -4,15 +4,19 @@ For reproducing my mac settings.
 
 ## Usage
 
-1. clone this repository
-2. move some files
+1. install homebrew  
+   https://brew.sh
+2. clone this repository
+3. move some files
    ```bash
    $ cd dotfiles
    $ mv .zshrc .vimrc ~
    $ mv -r .vim/colors ~/.vim
    ```
-3. run setup script
+4. run setup script
    ```bash
+   $ MAIL_ADDRESS=example@gmail.com
+   $ GITHUB_USER=hoge
    $ sh setup.sh
     ```
-4. sync vscode settings
+5. sync vscode settings

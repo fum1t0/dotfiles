@@ -1,8 +1,5 @@
 #!/bin/sh
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOOME/.zshrc
-source .zshrc
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 brew install bat delta gcc git kubernetes-cli nodebrew pyenv yarn zsh-autosuggestions zsh-completions zsh-fast-syntax-highlighting
